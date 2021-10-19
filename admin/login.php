@@ -1,3 +1,10 @@
+<?php 
+
+    require_once('../database/db.php');
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +26,48 @@
   <div class="login-logo">
     <a href="../../index2.html"><b>Admin</b>LTE</a>
   </div>
+  <?php 
+
+
+    if ($_SERVER['REQUEST_METHOD']=="POST") {
+
+         $email=htmlspecialchars(trim(stripcslashes($_POST['email'])));
+         $password=htmlspecialchars(trim(stripcslashes($_POST['password'])));
+  
+
+         if (empty($email)) {
+           echo "Email is required";
+         }elseif (empty($password)) {
+            echo "Password is required";
+         }else{
+          $password= md5($password);
+           $sql="SELECT * from admins where email='$email' AND password='$password' ";
+           $query=mysqli_query($connection,$sql);
+           $row=mysqli_num_rows($query);
+           echo $row;
+           if ($row==1) {
+             echo "Done";
+           }else{
+            echo "no";
+           }
+         }
+         
+    }
+
+
+
+
+
+
+   ?>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="../../index3.html" method="post">
+      <form action="" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +75,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -42,14 +83,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
+         
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
@@ -57,6 +91,9 @@
           <!-- /.col -->
         </div>
       </form>
+
+
+
 
       <div class="social-auth-links text-center mb-3">
         <p>- OR -</p>
