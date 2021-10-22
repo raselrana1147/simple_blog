@@ -13,7 +13,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?= $_SESSION['myName'] ?></a>
         </div>
       </div>
       <nav class="mt-2">
@@ -47,7 +47,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="logout.php?action=logout" class="nav-link">
               <i class="fas fa-sign-out-alt"></i>
               <p>Logout</p></a>
           </li>

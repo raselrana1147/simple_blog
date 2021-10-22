@@ -1,3 +1,19 @@
+<?php 
+  session_start();
+
+  require_once('../database/db.php');
+
+     $login=$_SESSION['login'];
+
+      if (isset($_SESSION['login']) && $_SESSION['login']!=true) {
+         header("location:login.php");
+    }  
+
+    // if ($login !=true) {
+    //     header("location:login.php");
+    // }
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +41,23 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="lobibox/css/lobibox.min.css">
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="lobibox/js/lobibox.js"></script>
+  <script src="lobibox/js/custom.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
+
+
+  <?php 
+
+            if (isset($_SESSION['session_status']) && $_SESSION['session_status']==true) {
+                 echo "<script>success_meesage('Your session is started')</script>";
+                  unset($_SESSION['session_status']);
+             }
+
+    ?>
 
  
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -47,6 +77,6 @@
    
   </nav>
   <!-- /.navbar -->
-<?=  include('inc/sidebar.php') ?>
+<?=  include('sidebar.php') ?>
 
   <!-- Main Sidebar Container -->

@@ -1,8 +1,5 @@
-<?= require_once('inc/header.php') ?>
-
-  <!-- Content Wrapper. Contains page content -->
+<?= require_once('header.php') ?>
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -92,4 +89,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<?=  include('inc/footer.php') ?>
+<?=  include('footer.php') ?>
