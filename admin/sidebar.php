@@ -22,14 +22,14 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
 
-            <a href="#" class="nav-link">
+            <a href="index.php" class="nav-link">
               <i class="fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link ">
+            <a href="category.php" class="nav-link ">
               <i class="fas fa-list-alt"></i>
               <p>Catgories</p></a>
           </li>

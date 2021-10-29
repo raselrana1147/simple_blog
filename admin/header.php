@@ -1,4 +1,5 @@
 <?php 
+  ob_start();
   session_start();
 
   require_once('../database/db.php');
@@ -9,9 +10,6 @@
          header("location:login.php");
     }  
 
-    // if ($login !=true) {
-    //     header("location:login.php");
-    // }
  ?>
 
 <!DOCTYPE html>
@@ -41,7 +39,8 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-    <link rel="stylesheet" href="lobibox/css/lobibox.min.css">
+  <link rel="stylesheet" href="lobibox/css/lobibox.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
   <script src="plugins/jquery/jquery.min.js"></script>
   <script src="lobibox/js/lobibox.js"></script>
   <script src="lobibox/js/custom.js"></script>

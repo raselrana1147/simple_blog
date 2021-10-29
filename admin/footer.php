@@ -48,5 +48,11 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="assets/js/custom.js"></script>
+
+<?php ob_end_flush(); ?>
 </body>
 </html>
